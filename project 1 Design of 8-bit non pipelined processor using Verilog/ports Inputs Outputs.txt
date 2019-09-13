@@ -1,0 +1,66 @@
+Output Ports:
+ALU v13
+AlU source V14
+branch U14
+jump U15
+mem read W18
+mem to reg V19
+mem write U19
+reg dest E19
+reg write U16
+
+Input:
+R2 - pc_input[7]
+set_property PACKAGE_PIN T1 [get_ports {pc_input[6]}]
+set_property PACKAGE_PIN U1 [get_ports {pc_input[5]}]
+set_property PACKAGE_PIN W2 [get_ports {pc_input[4]}]
+set_property PACKAGE_PIN R3 [get_ports {pc_input[3]}]
+set_property PACKAGE_PIN T2 [get_ports {pc_input[2]}]
+set_property PACKAGE_PIN T3 [get_ports {pc_input[1]}]
+set_property PACKAGE_PIN V2 [get_ports {pc_input[0]}]
+
+Inputs and outputs for instructions:
+
+ADD Instruction:
+
+ADD R0 R1
+Instruction – 8’b00001001
+rt – R0 – 01010
+rs – R1 – 00101
+Write Register – 01111 
+
+ADDI Instruction:
+ADDI R0 R1 2
+Instruction - 8'b00101010
+rs – R0 – 0111
+rt – R1 – 00101
+immediate – 010 
+
+SUB Instruction:
+SUB R0 R1
+Instruction - 8'b01010010
+rs – R0 – 01000 
+rt – R1 – 00101
+Write register - 00011 
+
+LW Instruction:
+lw R0 2(R1)
+Instruction - 8'b01101010
+rs – R0 – 01000
+rt – R1 – 00101
+immediate – 00010 
+stored in memory address 7 – 5'b00101
+
+SW Instruction
+SW R0 2(R1)
+Instruction - 8'b10001010
+rs – R0 – 01000 
+rt – R1 – 00101 
+immediate – 00010 
+
+JMP Instruction:
+Instruction - 8'b10100000
+
+
+
+
